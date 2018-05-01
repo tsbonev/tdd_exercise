@@ -11,9 +11,11 @@ public class Fraction {
         this.num = num;
         this.denom = denom;
 
-        if(num > 1 && num <= denom && UtilityFunctions.lcm(num, denom) == denom){
-            this.num = num / (denom / num);
-            this.denom = denom / num;
+        int gcd = UtilityFunctions.gcd(num, denom);
+
+        if(num > 1 && num <= denom && gcd == num){
+            this.num = num / gcd;
+            this.denom = denom / gcd;
         }
 
     }
@@ -36,7 +38,16 @@ public class Fraction {
     }
 
     public Fraction subtract(Fraction fraction){
-        throw new NotImplementedException();
+        if(this.denom == fraction.denom){
+            return new Fraction((this.num - fraction.num), this.denom);
+        }
+
+        int lcm = UtilityFunctions.lcm(this.denom, fraction.denom);
+        return new Fraction(
+                ( (this.num * (lcm / this.denom)) - (fraction.num * (lcm / fraction.denom))),
+                lcm
+        );
+
     }
 
     public Fraction multiply(Fraction fraction){
