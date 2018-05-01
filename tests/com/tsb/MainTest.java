@@ -18,11 +18,19 @@ class MainTest {
     }
 
     @Test
-    void freactionNormalization(){
+    void fractionNormalization(){
         Fraction f1 = new Fraction(3, 6);
         Fraction f2 = new Fraction(1, 2);
 
         assertTrue((f2.equals(f1)));
+    }
+
+    @Test
+    void improperNormalization(){
+        Fraction f1 = new Fraction(6, 3);
+        Fraction f2 = new Fraction(2, 1);
+
+        assertTrue(f2.equals(f1));
     }
 
     @Test
@@ -64,12 +72,22 @@ class MainTest {
     }
 
     @Test
-    void freactionDivision(){
+    void fractionDivision(){
         Fraction f1 = new Fraction(3, 6);
         Fraction f2 = new Fraction(1 ,6);
         Fraction subtractedFraction = new Fraction(18, 6);
 
         assertTrue((subtractedFraction.equals(f1.divide(f2))));
+    }
+
+    //TODO Make integers compatible with fractions
+
+    @Test
+    void integerFractionSum(){
+        int i = 1;
+        Fraction f1 = new Fraction(1, 1);
+
+        assertEquals(2, f1.sum(i));
     }
 
 }

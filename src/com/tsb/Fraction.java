@@ -21,6 +21,10 @@ public class Fraction {
     }
 
 
+    public Fraction sum (Integer i){
+        throw new NotImplementedException();
+    }
+
     public Fraction sum(Fraction fraction) {
         Fraction result = new Fraction(0, 0);
 
