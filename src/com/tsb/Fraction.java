@@ -51,7 +51,10 @@ public class Fraction {
     }
 
     public Fraction multiply(Fraction fraction){
-        throw new NotImplementedException();
+        return new Fraction(
+                this.num * fraction.num,
+                this.denom * fraction.denom
+        );
     }
 
     public Fraction divide(Fraction fraction){

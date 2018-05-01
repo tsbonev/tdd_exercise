@@ -54,4 +54,15 @@ class MainTest {
         assertTrue((subtractedFraction.equals(f1.subtract(f2))));
     }
 
+    @Test
+    void fractionMultiplication(){
+        Fraction f1 = new Fraction(3, 6);
+        Fraction f2 = new Fraction(1 ,6);
+        Fraction subtractedFraction = new Fraction(1, 12);
+
+        assertTrue((subtractedFraction.equals(f1.multiply(f2))));
+    }
+
+    
+
 }
