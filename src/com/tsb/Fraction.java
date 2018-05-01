@@ -13,7 +13,7 @@ public class Fraction {
 
         int gcd = UtilityFunctions.gcd(num, denom);
 
-        if(num > 1 && num <= denom && gcd == num){
+        if(num > 1 && ( gcd == num || gcd == denom)){
             this.num = num / gcd;
             this.denom = denom / gcd;
         }
@@ -58,7 +58,7 @@ public class Fraction {
     }
 
     public Fraction divide(Fraction fraction){
-        throw new NotImplementedException();
+        return (new Fraction(fraction.denom, fraction.num)).multiply(this);
     }
 
 
