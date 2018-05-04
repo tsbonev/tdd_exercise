@@ -1,13 +1,22 @@
 package com.tsb;
 
+
+import org.jmock.auto.Mock;
 import junit.framework.TestCase;
 import org.jmock.Mockery;
 import org.jmock.Expectations;
-import org.jmock.auto.Mock;
+import org.junit.jupiter.api.Test;
+
+import java.awt.*;
+
+import static org.hamcrest.Matchers.*;
+import static org.junit.Assert.assertThat;
 
 public class JMockTest extends TestCase {
     Mockery context = new Mockery();
 
+    /*
+    @Test
     public void testOneSubscriberReceivesAMessage() {
         // set up
         final Subscriber subscriber = context.mock(Subscriber.class); //Create a mock object from an interface
@@ -27,5 +36,22 @@ public class JMockTest extends TestCase {
 
         // verify
         context.assertIsSatisfied(); //We check if our expectations were true
+    }*/
+
+    @Test
+    public void onePlusTwo() {
+
+        assertThat(1, equalTo(1));
+
     }
+
+    @Test
+    public void objectIsEqual(){
+
+        String str = null;
+
+        assertThat(str, anything());
+
+    }
+
 }

@@ -14,7 +14,6 @@ class MainTest {
 
         assertEquals(2, fraction.num);
         assertEquals(1, fraction.denom);
-
     }
 
     @Test
